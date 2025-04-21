@@ -98,6 +98,8 @@ function isHalfScreenLeft() {
 }
 
 function firstCall() {
+  const now = document.querySelector(".datepicker-days > table:nth-child(1) > thead:nth-child(1) > tr:nth-child(2) > th:nth-child(1) > div:nth-child(1) > div:nth-child(2)").textContent;
+  alert(`현재 ${now}의 강의들을 표시중입니다. 다른 달의 강의를 보려면 달력을 다른 달로 이동시켜주세요.`)
   clearTbody();
   count = 0;
   page = 0;
