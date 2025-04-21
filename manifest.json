@@ -13,12 +13,12 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://*.swmaestro.org/sw/mypage/userAnswer/history.do*", "https://swmaestro.org/sw/mypage/userAnswer/history.do*"],
-      "js": ["/src/index.js"]
-    },
-    {
-      "matches":["https://*.swmaestro.org/sw/mypage/mentoLec/list.do?menuNo=200046*", "https://swmaestro.org/sw/mypage/mentoLec/list.do?menuNo=200046*"],
-      "js": ["/src/index.js"]
+      "matches": [
+        "https://*.swmaestro.org/sw/mypage/mentoLec/list.do*",
+        "https://swmaestro.org/sw/mypage/mentoLec/list.do*"
+      ],
+      "js": ["/src/index.js"],
+      "run_at": "document_idle"
     }
   ],
   "browser_specific_settings": {
