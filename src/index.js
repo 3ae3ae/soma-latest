@@ -82,7 +82,7 @@ function makeTr({
 function addLectures(lecs) {
   const $frag = document.createDocumentFragment();
   for (const lec of lecs) {
-    $frag.appendChild(makeTr({...lec, number: lectures.length-page*lecturePerPage-count++}));
+    $frag.appendChild(makeTr({...lec, number: lectures.length-count++}));
   }
   $tbody.appendChild($frag);
 }
