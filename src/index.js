@@ -2,6 +2,7 @@ const lecturePerPage = 10;
 let $tbody
 let page = 0;
 let lectures;
+let count = 0;
 
 function getEveryLectures() {
   const scripts = document.querySelectorAll("script");
@@ -80,7 +81,6 @@ function makeTr({
 
 function addLectures(lecs) {
   const $frag = document.createDocumentFragment();
-  let count = 0;
   for (const lec of lecs) {
     $frag.appendChild(makeTr({...lec, number: lectures.length-page*lecturePerPage-count++}));
   }
@@ -99,6 +99,7 @@ function isHalfScreenLeft() {
 
 function firstCall() {
   clearTbody();
+  count = 0;
   page = 0;
   addLectures(getPagedLectures(page++));
   window.addEventListener("scroll", () => {
