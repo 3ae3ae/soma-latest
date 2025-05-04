@@ -13,7 +13,13 @@ function getEveryLectures() {
       let match;
 
       while ((match = regex.exec(script.textContent)) !== null) {
-        matches.push(JSON.parse(match[1]));
+        try {
+          matches.push(JSON.parse(match[1]));
+        }
+        catch (e) {
+          console.error("Error parsing JSON:", e);
+          continue;
+        }
       }
       break;
     }
